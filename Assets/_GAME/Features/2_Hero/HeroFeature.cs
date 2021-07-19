@@ -88,6 +88,8 @@ namespace GAME.Hero
         {
             foreach (var curRend in hero.renderers)
             {
+                curRend.DOKill();
+                curRend.color = Color.white;
                 curRend.DOColor(_color, 0.15f).SetLoops(4, LoopType.Yoyo)
                     .OnComplete(() => curRend.DOColor(Color.white, 0));
             }
